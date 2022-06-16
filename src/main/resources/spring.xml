@@ -17,6 +17,8 @@
 
     <!-- 放行所有的静态资源-->
     <mvc:default-servlet-handler />
+    <!-- 加了上一行配置后，controller无法访问，需要增加如下一行配置。-->
+    <mvc:annotation-driven />
 
     <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
