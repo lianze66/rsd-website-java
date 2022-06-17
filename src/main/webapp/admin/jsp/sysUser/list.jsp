@@ -11,6 +11,20 @@
     <script type="text/javascript" src="/admin/js/jquery.js"></script>
 
     <script type="text/javascript">
+        function toAddPage() {
+            location.href = "/admin/jsp/sysUser/add.jsp";
+        }
+
+        function toUpdatePage(id) {
+            location.href = "/sysUser/toUpdatePage/" + id;
+        }
+
+        function doDelete(id) {
+            if (confirm("您确认删除吗？")) {
+                location.href = "/sysUser/delete/" + id;
+            }
+        }
+
         $(document).ready(function(){
             $(".click").click(function(){
                 $(".tip").fadeIn(200);
@@ -50,16 +64,17 @@
 
     <div class="tools">
 
+        <!--
         <ul class="toolbar">
-            <li class="click"><span><img src="/admin/images/t01.png" /></span>添加</li>
+            <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
             <li class="click"><span><img src="/admin/images/t02.png" /></span>修改</li>
             <li><span><img src="/admin/images/t03.png" /></span>删除</li>
             <li><span><img src="/admin/images/t04.png" /></span>统计</li>
         </ul>
-
+        -->
 
         <ul class="toolbar1">
-            <li><span><img src="/admin/images/t05.png" /></span>设置</li>
+            <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
         </ul>
 
     </div>
@@ -76,14 +91,14 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${list}" var="sysUser">
+        <c:forEach items="${list}" var="sysUser" varStatus="i">
             <tr>
-                <td>${sysUser.id}</td>
+                <td>${i.count}</td>
                 <td>${sysUser.loginName}</td>
                 <td>${sysUser.password}</td>
                 <td>
-                    <a href="#" class="tablelink">查看</a>
-                    <a href="#" class="tablelink"> 删除</a>
+                    <a href="javascript:toUpdatePage(${sysUser.id});" class="tablelink">修改</a>
+                    <a href="javascript:doDelete(${sysUser.id});" class="tablelink"> 删除</a>
                 </td>
             </tr>
         </c:forEach>

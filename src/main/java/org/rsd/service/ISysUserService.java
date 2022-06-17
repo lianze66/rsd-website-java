@@ -10,4 +10,10 @@ public interface ISysUserService {
 
     SysUser getById(Integer id);
 
+    void insert(SysUser sysUser);
+
+    void update(SysUser sysUser);
+
+    void delete(Integer id);
+
 }
