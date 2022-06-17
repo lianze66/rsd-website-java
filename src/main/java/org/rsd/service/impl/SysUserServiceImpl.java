@@ -19,7 +19,7 @@ public class SysUserServiceImpl implements ISysUserService {
 
     @Override
     public PageInfo<SysUser> queryList(Integer pageNum) {
-        Page<SysUser> page = PageHelper.startPage(pageNum, 5);
+        Page<SysUser> page = PageHelper.startPage(pageNum, 10);
         sysUserMapper.queryList();
         return page.toPageInfo();
     }
