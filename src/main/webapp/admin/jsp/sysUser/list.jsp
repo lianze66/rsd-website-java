@@ -54,31 +54,32 @@
 <div class="place">
     <span>位置：</span>
     <ul class="placeul">
-        <li><a href="#">首页</a></li>
-        <li><a href="#">数据表</a></li>
-        <li><a href="#">基本内容</a></li>
+        <li><a href="/admin/index.jsp">首页</a></li>
+        <li><a href="#">系统设置</a></li>
+        <li><a href="#">用户管理</a></li>
+    </ul>
+    <ul class="toolbar1">
+        <li onclick="toAddPage();" style="line-height:28px; height:28px;margin-top: 5px;margin-right: 8px;cursor:pointer;">
+            <span><img src="/admin/images/t01.png" width="18" height="18" /></span>添加</li>
     </ul>
 </div>
 
 <div class="rightinfo">
 
-    <div class="tools">
+    <!--
+   <div class="tools">
+       <ul class="toolbar">
+           <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
+           <li class="click"><span><img src="/admin/images/t02.png" /></span>修改</li>
+           <li><span><img src="/admin/images/t03.png" /></span>删除</li>
+           <li><span><img src="/admin/images/t04.png" /></span>统计</li>
+       </ul>
 
-        <!--
-        <ul class="toolbar">
-            <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
-            <li class="click"><span><img src="/admin/images/t02.png" /></span>修改</li>
-            <li><span><img src="/admin/images/t03.png" /></span>删除</li>
-            <li><span><img src="/admin/images/t04.png" /></span>统计</li>
-        </ul>
-        -->
-
-        <ul class="toolbar1">
-            <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
-        </ul>
-
+       <ul class="toolbar1">
+           <li onclick="toAddPage();"><span><img src="/admin/images/t01.png" /></span>添加</li>
+       </ul>
     </div>
-
+    -->
 
     <table class="tablelist">
         <thead>
