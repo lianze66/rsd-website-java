@@ -41,6 +41,6 @@
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="org.rsd.mapper" />
-        <property name="sqlSessionFactory" ref="factory" />
+        <property name="sqlSessionFactoryBeanName" value="factory" />
     </bean>
 </beans>
