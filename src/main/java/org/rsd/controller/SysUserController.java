@@ -29,33 +29,22 @@ public class SysUserController {
         return mav;
     }
 
-    @RequestMapping(value = "detail/{id}", method = RequestMethod.GET)
-    public ModelAndView detail(@PathVariable Integer id) {
-        ModelAndView mav = new ModelAndView("/admin/jsp/sysUser/detail.jsp");
-
-        mav.addObject("sysUser", sysUserService.getById(id));
-
-        return mav;
-    }
-
     @RequestMapping(value = "toUpdatePage/{id}", method = RequestMethod.GET)
     public ModelAndView toUpdatePage(@PathVariable Integer id) {
-        ModelAndView mav = new ModelAndView("/admin/jsp/sysUser/update.jsp");
+        ModelAndView mav = new ModelAndView("/admin/jsp/sysUser/form.jsp");
 
         mav.addObject("sysUser", sysUserService.getById(id));
 
         return mav;
     }
 
-    @RequestMapping(value = "insert", method = RequestMethod.POST)
-    public String insert(SysUser sysUser) {
-        sysUserService.insert(sysUser);
-        return "redirect:/sysUser/list";
-    }
-
-    @RequestMapping(value = "update", method = RequestMethod.POST)
-    public String update(SysUser sysUser) {
-        sysUserService.update(sysUser);
+    @RequestMapping(value = "save", method = RequestMethod.POST)
+    public String save(SysUser sysUser) {
+        if (sysUser.getId() == null || sysUser.getId().equals("")) {
+            sysUserService.insert(sysUser);
+        } else {
+            sysUserService.update(sysUser);
+        }
         return "redirect:/sysUser/list";
     }
 

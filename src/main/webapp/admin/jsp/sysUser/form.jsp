@@ -22,10 +22,11 @@
 
     <div class="formtitle"><span>基本信息</span></div>
 
-    <form action="/sysUser/insert" method="post">
+    <form action="/sysUser/save" method="post">
+        <input type="hidden" name="id" value="${sysUser.id}" />
         <ul class="forminfo">
-            <li><label>登录名称</label><input name="loginName" type="text" class="dfinput" /><i>登录名称只支持手机号</i></li>
-            <li><label>密码</label><input name="password" type="text" class="dfinput" /><i>至少包含大小写和数字</i></li>
+            <li><label>登录名称</label><input name="loginName" type="text" class="dfinput" value="${sysUser.loginName}" /><i>登录名称只支持手机号</i></li>
+            <li><label>密码</label><input name="password" type="text" class="dfinput" value="${sysUser.password}" /><i>至少包含大小写和数字</i></li>
             <li><label>&nbsp;</label><input type="submit" class="btn" value="确认保存" /></li>
         </ul>
     </form>

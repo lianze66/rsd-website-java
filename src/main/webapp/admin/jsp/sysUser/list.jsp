@@ -12,7 +12,7 @@
 
     <script type="text/javascript">
         function toAddPage() {
-            location.href = "/admin/jsp/sysUser/add.jsp";
+            location.href = "/admin/jsp/sysUser/form.jsp";
         }
 
         function toUpdatePage(id) {
