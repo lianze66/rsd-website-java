@@ -1,5 +1,8 @@
 package org.rsd.service.impl;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.rsd.bean.SysUser;
 import org.rsd.mapper.ISysUserMapper;
 import org.rsd.service.ISysUserService;
@@ -15,8 +18,10 @@ public class SysUserServiceImpl implements ISysUserService {
     private ISysUserMapper sysUserMapper;
 
     @Override
-    public List<SysUser> queryList() {
-        return sysUserMapper.queryList();
+    public PageInfo<SysUser> queryList(Integer pageNum) {
+        Page<SysUser> page = PageHelper.startPage(pageNum, 5);
+        sysUserMapper.queryList();
+        return page.toPageInfo();
     }
 
     @Override

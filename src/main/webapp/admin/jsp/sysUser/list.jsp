@@ -92,9 +92,9 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${list}" var="sysUser" varStatus="i">
+        <c:forEach items="${pageInfo.list}" var="sysUser" varStatus="i">
             <tr>
-                <td>${i.count}</td>
+                <td>${i.count + (pageInfo.pageNum - 1) * pageInfo.pageSize}</td>
                 <td>${sysUser.loginName}</td>
                 <td>${sysUser.password}</td>
                 <td>
@@ -106,18 +106,13 @@
         </tbody>
     </table>
 
-
     <div class="pagin">
-        <div class="message">共<i class="blue">1256</i>条记录，当前显示第&nbsp;<i class="blue">2&nbsp;</i>页</div>
+        <div class="message">共<i class="blue">${pageInfo.total}</i>条记录，当前显示第&nbsp;<i class="blue">${pageInfo.pageNum}&nbsp;</i>页</div>
         <ul class="paginList">
             <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
-            <li class="paginItem"><a href="javascript:;">1</a></li>
-            <li class="paginItem current"><a href="javascript:;">2</a></li>
-            <li class="paginItem"><a href="javascript:;">3</a></li>
-            <li class="paginItem"><a href="javascript:;">4</a></li>
-            <li class="paginItem"><a href="javascript:;">5</a></li>
-            <li class="paginItem more"><a href="javascript:;">...</a></li>
-            <li class="paginItem"><a href="javascript:;">10</a></li>
+            <c:forEach items="${pageInfo.navigatepageNums}" var="num">
+                <li class="paginItem"><a href="/sysUser/list/${num}">${num}</a></li>
+            </c:forEach>
             <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
         </ul>
     </div>

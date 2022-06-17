@@ -1,5 +1,6 @@
 package org.rsd.controller;
 
+import com.github.pagehelper.PageInfo;
 import org.rsd.bean.SysUser;
 import org.rsd.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,13 @@ public class SysUserController {
     @Autowired
     private ISysUserService sysUserService;
 
-    @RequestMapping(value = "list",method = RequestMethod.GET)
-    public ModelAndView list() {
+    @RequestMapping(value = "list/{pageNum}",method = RequestMethod.GET)
+    public ModelAndView list(@PathVariable Integer pageNum) {
         ModelAndView mav = new ModelAndView("/admin/jsp/sysUser/list.jsp");
 
-        List<SysUser> list = sysUserService.queryList();
+        PageInfo<SysUser> pageInfo = sysUserService.queryList(pageNum);
 
-        mav.addObject("list", list);
+        mav.addObject("pageInfo", pageInfo);
 
         return mav;
     }

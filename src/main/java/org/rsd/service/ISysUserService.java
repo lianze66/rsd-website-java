@@ -1,12 +1,13 @@
 package org.rsd.service;
 
+import com.github.pagehelper.PageInfo;
 import org.rsd.bean.SysUser;
 
 import java.util.List;
 
 public interface ISysUserService {
 
-    List<SysUser> queryList();
+    PageInfo<SysUser> queryList(Integer pageNum);
 
     SysUser getById(Integer id);
 
