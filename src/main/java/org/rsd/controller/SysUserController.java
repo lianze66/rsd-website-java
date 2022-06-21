@@ -31,7 +31,7 @@ public class SysUserController {
     }
 
     @RequestMapping(value = "toUpdatePage/{id}", method = RequestMethod.GET)
-    public ModelAndView toUpdatePage(@PathVariable Integer id) {
+    public ModelAndView toUpdatePage(@PathVariable int id) {
         ModelAndView mav = new ModelAndView("/admin/jsp/sysUser/form.jsp");
 
         mav.addObject("sysUser", sysUserService.getById(id));
