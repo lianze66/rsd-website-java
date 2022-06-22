@@ -39,8 +39,8 @@ public class StudentDAOImpl implements IStudentDAO {
 
     @Override
     public Student getById(Integer id) {
-        String sql = "select * from bu_student where id="+id;
-        return jdbcTemplate.queryForObject(sql, mapper);
+        String sql = "select * from bu_student where id=?";
+        return jdbcTemplate.queryForObject(sql, mapper, id);
     }
 
     @Override
