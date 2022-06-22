@@ -31,7 +31,7 @@ public class Test2 {
     @Test
     public void test3() {
         Student student = new Student();
-        student.setName("小刘");
+        student.setName("小李");
         student.setAge(15);
         studentDAO.insert(student);
     }

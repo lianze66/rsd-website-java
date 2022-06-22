@@ -45,7 +45,7 @@ public class StudentDAOImpl implements IStudentDAO {
 
     @Override
     public void insert(Student student) {
-        String sql = "insert into bu_student values(null, '"+student.getName()+"', "+student.getAge()+")";
-        jdbcTemplate.execute(sql);
+        String sql = "insert into bu_student values(null, ?, ?)";
+        jdbcTemplate.update(sql, student.getName(), student.getAge());
     }
 }
