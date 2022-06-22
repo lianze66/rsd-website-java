@@ -7,7 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 @SpringJUnitConfig
-@ContextConfiguration("classpath:spring.xml")
+@ContextConfiguration("classpath:test.xml")
 public class Test1 {
 
     @Autowired

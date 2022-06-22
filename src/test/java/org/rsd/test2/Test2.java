@@ -1,8 +1,8 @@
 package org.rsd.test2;
 
 import org.junit.jupiter.api.Test;
-import org.rsd.bean.Student;
-import org.rsd.dao.IStudentDAO;
+import org.rsd.bean.Diary;
+import org.rsd.dao.IDiaryDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -14,25 +14,26 @@ import java.util.List;
 public class Test2 {
 
     @Autowired
-    private IStudentDAO studentDAO;
+    private IDiaryDAO diaryDAO;
 
     @Test
     public void test1() {
-        List<Student> list = studentDAO.queryList();
+        List<Diary> list = diaryDAO.queryList();
         System.out.println(list);
     }
 
     @Test
     public void test2() {
-        Student student = studentDAO.getById(2);
-        System.out.println(student);
+        Diary diary = diaryDAO.getById(1);
+        System.out.println(diary);
     }
 
     @Test
     public void test3() {
-        Student student = new Student();
-        student.setName("小李");
-        student.setAge(15);
-        studentDAO.insert(student);
+        Diary diary = new Diary();
+        diary.setTitle("AAAAAAA");
+        diary.setContent("bbbbbbbbbbb");
+
+        diaryDAO.insert(diary);
     }
 }
