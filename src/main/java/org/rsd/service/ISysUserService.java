@@ -16,5 +16,4 @@ public interface ISysUserService {
     void update(SysUser sysUser);
 
     void delete(Integer id);
-
 }

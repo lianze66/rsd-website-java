@@ -7,7 +7,11 @@ import org.rsd.bean.SysUser;
 import org.rsd.mapper.ISysUserMapper;
 import org.rsd.service.ISysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
