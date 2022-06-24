@@ -5,7 +5,7 @@ import org.rsd.bean.SysFunction;
 
 import java.util.List;
 
-public interface IFunctionMapper {
+public interface ISysFunctionMapper {
 
     @Select("select * from bu_sys_function where parent_id=#{parentId}")
     List<SysFunction> getListByParentId(Integer parentId);

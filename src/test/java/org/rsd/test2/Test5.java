@@ -2,12 +2,11 @@ package org.rsd.test2;
 
 import org.junit.jupiter.api.Test;
 import org.rsd.bean.SysFunction;
-import org.rsd.mapper.IFunctionMapper;
+import org.rsd.mapper.ISysFunctionMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringJUnitConfig
@@ -15,7 +14,7 @@ import java.util.List;
 public class Test5 {
 
     @Autowired
-    private IFunctionMapper functionMapper;
+    private ISysFunctionMapper functionMapper;
 
     List<SysFunction> list = null;
     void tt(Integer parentId) {
