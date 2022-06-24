@@ -8,4 +8,5 @@ public interface ISysFunctionService {
     
     List<SysFunction> treeList();
 
+    List<SysFunction> treeList2();
 }
