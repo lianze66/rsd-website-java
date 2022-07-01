@@ -7,8 +7,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-    <link href="/admin/css/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="/admin/js/jquery.js"></script>
+    <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="${pageContext.request.contextPath}/admin/js/jquery.js"></script>
 
     <script type="text/javascript">
         function toAddPage() {
