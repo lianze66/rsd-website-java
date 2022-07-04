@@ -29,7 +29,7 @@
 
     <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://121.36.94.172:3306/rsd_website" />
+        <property name="url" value="jdbc:mysql://121.36.94.172:3306/rsd_website?characterEncoding=UTF8" />
         <property name="username" value="rsd" />
         <property name="password" value="123456" />
     </bean>

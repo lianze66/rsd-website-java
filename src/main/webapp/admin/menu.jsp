@@ -54,7 +54,7 @@
         </div>
         <ul class="menuson">
             <li><cite></cite><a href="${pageContext.request.contextPath}/sysUser/list/1" target="rightFrame">用户管理</a><i></i></li>
-            <li><cite></cite><a href="right.html" target="rightFrame">角色管理</a><i></i></li>
+            <li><cite></cite><a href="${pageContext.request.contextPath}/sysRole/list" target="rightFrame">角色管理</a><i></i></li>
             <li><cite></cite><a href="imgtable.html" target="rightFrame">功能管理</a><i></i></li>
         </ul>
     </dd>
