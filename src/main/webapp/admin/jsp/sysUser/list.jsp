@@ -6,22 +6,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
+    <title>学生管理</title>
     <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/admin/js/jquery.js"></script>
 
     <script type="text/javascript">
         function toAddPage() {
-            location.href = "/admin/jsp/sysUser/form.jsp";
+            location.href = "${pageContext.request.contextPath}/admin/jsp/sysUser/form.jsp";
         }
 
         function toUpdatePage(id) {
-            location.href = "/sysUser/toUpdatePage/" + id;
+            location.href = "${pageContext.request.contextPath}/sysUser/toUpdatePage/" + id;
         }
 
         function doDelete(id) {
             if (confirm("您确认删除吗？")) {
-                location.href = "/sysUser/delete/" + id;
+                location.href = "${pageContext.request.contextPath}/sysUser/delete/" + id;
             }
         }
 
@@ -54,13 +54,13 @@
 <div class="place">
     <span>位置：</span>
     <ul class="placeul">
-        <li><a href="/admin/index.jsp">首页</a></li>
+        <li><a href="${pageContext.request.contextPath}/admin/index.jsp">首页</a></li>
         <li><a href="#">系统设置</a></li>
         <li><a href="#">用户管理</a></li>
     </ul>
     <ul class="toolbar1">
         <li onclick="toAddPage();" style="line-height:28px; height:28px;margin-top: 5px;margin-right: 8px;cursor:pointer;">
-            <span><img src="/admin/images/t01.png" width="18" height="18" /></span>添加</li>
+            <span><img src="${pageContext.request.contextPath}/admin/images/t01.png" width="18" height="18" /></span>添加</li>
     </ul>
 </div>
 
@@ -111,7 +111,7 @@
         <ul class="paginList">
             <li class="paginItem"><a href="javascript:;"><span class="pagepre"></span></a></li>
             <c:forEach items="${pageInfo.navigatepageNums}" var="num">
-                <li class="paginItem"><a href="/sysUser/list/${num}">${num}</a></li>
+                <li class="paginItem"><a href="${pageContext.request.contextPath}/sysUser/list/${num}">${num}</a></li>
             </c:forEach>
             <li class="paginItem"><a href="javascript:;"><span class="pagenxt"></span></a></li>
         </ul>

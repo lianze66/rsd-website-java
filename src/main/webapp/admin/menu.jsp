@@ -4,8 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>无标题文档</title>
+    <title>菜单页面</title>
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+
     <script language="JavaScript" src="js/jquery.js"></script>
 
     <script type="text/javascript">
@@ -49,7 +50,7 @@
 
     <dd>
         <div class="title">
-            <span><img src="${pageContext.request.contextPath}/images/leftico01.png" /></span>系统设置
+            <span><img src="images/leftico01.png" /></span>系统设置
         </div>
         <ul class="menuson">
             <li><cite></cite><a href="${pageContext.request.contextPath}/sysUser/list/1" target="rightFrame">用户管理</a><i></i></li>

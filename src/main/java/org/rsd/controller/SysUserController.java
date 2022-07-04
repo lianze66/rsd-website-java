@@ -46,12 +46,12 @@ public class SysUserController {
         } else {
             sysUserService.update(sysUser);
         }
-        return "redirect:/sysUser/list";
+        return "redirect:/sysUser/list/1";
     }
 
     @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
     public String delete(@PathVariable Integer id) {
         sysUserService.delete(id);
-        return "redirect:/sysUser/list";
+        return "redirect:/sysUser/list/1";
     }
 }
