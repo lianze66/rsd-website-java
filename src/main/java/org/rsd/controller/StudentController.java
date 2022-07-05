@@ -5,6 +5,7 @@ import org.rsd.service.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,4 +24,9 @@ public class StudentController {
         return studentService.queryList();
     }
 
+    @ResponseBody
+    @PostMapping("insert")
+    public void insert(Student student) {
+        studentService.insert(student);
+    }
 }

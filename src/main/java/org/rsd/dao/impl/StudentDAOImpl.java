@@ -33,7 +33,7 @@ public class StudentDAOImpl implements IStudentDAO {
 
     @Override
     public List<Student> queryList() {
-        String sql = "select * from bu_student";
+        String sql = "select * from bu_student order by id desc";
         List<Student> list = jdbcTemplate.query(sql, mapper);
         return list;
     }
@@ -46,7 +46,7 @@ public class StudentDAOImpl implements IStudentDAO {
 
     @Override
     public void insert(Student student) {
-        String sql = "insert into bu_student values(null, ?, ?)";
-        jdbcTemplate.update(sql, student.getName(), student.getAge());
+        String sql = "insert into bu_student values(null, ?, ?, ?)";
+        jdbcTemplate.update(sql, student.getName(), student.getAge(), student.getCreateTime());
     }
 }

@@ -8,4 +8,6 @@ public interface IStudentService {
 
     List<Student> queryList();
 
+    void insert(Student student);
+
 }

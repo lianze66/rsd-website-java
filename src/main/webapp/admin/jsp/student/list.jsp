@@ -11,10 +11,10 @@
     <script type="text/javascript">
         $(function () {
             $.get("${pageContext.request.contextPath}/student/list", function (data) {
-                data.forEach(function (student) {
+                data.forEach(function (student, index) {
                     var str = "";
                     str += "<tr>";
-                    str += "<td>"+student.id+"</td>";
+                    str += "<td>"+(index+1)+"</td>";
                     str += "<td>"+student.name+"</td>";
                     str += "<td>"+student.age+"</td>";
                     str += "<td>"+student.createTime+"</td>";
@@ -27,7 +27,7 @@
         });
 
         function toAddPage() {
-            location.href = "${pageContext.request.contextPath}/admin/jsp/sysRole/form.jsp";
+            location.href = "${pageContext.request.contextPath}/admin/jsp/student/form.jsp";
         }
 
         function toUpdatePage(id) {
