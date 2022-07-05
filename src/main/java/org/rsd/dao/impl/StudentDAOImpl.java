@@ -25,6 +25,7 @@ public class StudentDAOImpl implements IStudentDAO {
             student.setId(rs.getInt("id"));
             student.setName(rs.getString("name"));
             student.setAge(rs.getInt("age"));
+            student.setCreateTime(rs.getTimestamp("create_time"));
 
             return student;
         }

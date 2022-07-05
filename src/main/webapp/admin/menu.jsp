@@ -42,7 +42,7 @@
             <span><img src="images/leftico02.png" /></span>业务管理
         </div>
         <ul class="menuson">
-            <li class="active"><cite></cite><a href="#">学生管理</a><i></i></li>
+            <li class="active"><cite></cite><a href="${pageContext.request.contextPath}/admin/jsp/student/list.jsp" target="rightFrame">学生管理</a><i></i></li>
             <li><cite></cite><a href="#">老师管理</a><i></i></li>
             <li><cite></cite><a href="#">考勤管理</a><i></i></li>
         </ul>
