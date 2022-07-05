@@ -6,10 +6,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>系统用户 - 表单页面</title>
     <link href="${pageContext.request.contextPath}/admin/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="${pageContext.request.contextPath}/admin/js/jquery-3.6.0.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            $("#but").click(function() {
+                $("[name='loginName']").attr("value", "aaaaaaaaaaaaaaaaaaaaaaa");
+                $("[name='loginName']").val("aaaaaaaaaaaaaaaaaaaaaaa");
+            });
+            $(":button.btn").bind("click", null, function () {
+               alert("BBBBBBB");
+            });
+        });
+    </script>
 </head>
 
 <body>
-
+<input id="but" type="button" value="点击我" />
+<div id="showInfo"><font color="#faebd7">我爱北京天安门</font></div>
 <div class="place">
     <span>位置：</span>
     <ul class="placeul">
@@ -28,6 +43,7 @@
             <li><label>登录名称</label><input name="loginName" type="text" class="dfinput" value="${sysUser.loginName}" /><i>登录名称只支持手机号</i></li>
             <li><label>密码</label><input name="password" type="text" class="dfinput" value="${sysUser.password}" /><i>至少包含大小写和数字</i></li>
             <li><label>&nbsp;</label><input type="submit" class="btn" value="确认保存" /></li>
+            <li><label>&nbsp;</label><input type="button" class="btn" value="点击我" /></li>
         </ul>
     </form>
     <!--
