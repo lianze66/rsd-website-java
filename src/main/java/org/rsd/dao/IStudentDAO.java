@@ -13,4 +13,7 @@ public interface IStudentDAO {
     void insert(Student student);
 
     void update(Student student);
+
+    void delete(Integer id);
+
 }

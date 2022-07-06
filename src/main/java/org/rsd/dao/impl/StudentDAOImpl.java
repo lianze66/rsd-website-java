@@ -55,4 +55,10 @@ public class StudentDAOImpl implements IStudentDAO {
         String sql = "update bu_student set name=?,age=? where id=?";
         jdbcTemplate.update(sql, student.getName(), student.getAge(), student.getId());
     }
+
+    @Override
+    public void delete(Integer id) {
+        String sql = "delete from bu_student where id=?";
+        jdbcTemplate.update(sql, id);
+    }
 }
