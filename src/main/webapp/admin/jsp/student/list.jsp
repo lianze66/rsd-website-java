@@ -21,7 +21,7 @@
                     str += "<td>";
                     str += "<a href='${pageContext.request.contextPath}/admin/jsp/student/form.jsp?id="+student.id+"'>修改</a>";
                     str += "&nbsp;&nbsp;&nbsp;&nbsp;";
-                    str += "删除";
+                    str += "<a href='javascript:doDelete("+student.id+")'>删除</a>";
                     str += "</td>";
                     str += "</tr>";
 
@@ -36,7 +36,27 @@
 
         function doDelete(id) {
             if (confirm("您确认删除吗？")) {
-                location.href = "${pageContext.request.contextPath}/sysRole/delete/" + id;
+                $.ajax({
+                    url:"${pageContext.request.contextPath}/student/delete/"+id,
+                    type:"get",
+                    success:function (data,status,xhr) {
+                        if (status == "success") {
+                            alert("删除成功！");
+                            location.href = "${pageContext.request.contextPath}/admin/jsp/student/list.jsp";
+                        } else {
+                            alert("删除失败！");
+                        }
+                    }
+                });
+
+                <%--$.get("${pageContext.request.contextPath}/student/delete/"+id, function(data, status) {--%>
+                <%--    if (status == "success") {--%>
+                <%--        alert("删除成功！");--%>
+                <%--        location.href = "${pageContext.request.contextPath}/admin/jsp/student/list.jsp";--%>
+                <%--    } else {--%>
+                <%--        alert("删除失败！");--%>
+                <%--    }--%>
+                <%--});--%>
             }
         }
     </script>
