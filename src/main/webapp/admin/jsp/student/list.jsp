@@ -18,7 +18,11 @@
                     str += "<td>"+student.name+"</td>";
                     str += "<td>"+student.age+"</td>";
                     str += "<td>"+student.createTime+"</td>";
-                    str += "<td>修改 删除</td>";
+                    str += "<td>";
+                    str += "<a href='${pageContext.request.contextPath}/admin/jsp/student/form.jsp?id="+student.id+"'>修改</a>";
+                    str += "&nbsp;&nbsp;&nbsp;&nbsp;";
+                    str += "删除";
+                    str += "</td>";
                     str += "</tr>";
 
                     $("tbody").append(str);
@@ -28,10 +32,6 @@
 
         function toAddPage() {
             location.href = "${pageContext.request.contextPath}/admin/jsp/student/form.jsp";
-        }
-
-        function toUpdatePage(id) {
-            location.href = "${pageContext.request.contextPath}/sysRole/toUpdatePage/" + id;
         }
 
         function doDelete(id) {

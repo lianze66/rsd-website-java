@@ -8,6 +8,9 @@ public interface IStudentService {
 
     List<Student> queryList();
 
+    Student getById(Integer id);
+
     void insert(Student student);
 
+    void update(Student student);
 }

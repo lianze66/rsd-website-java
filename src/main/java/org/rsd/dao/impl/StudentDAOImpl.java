@@ -49,4 +49,10 @@ public class StudentDAOImpl implements IStudentDAO {
         String sql = "insert into bu_student values(null, ?, ?, ?)";
         jdbcTemplate.update(sql, student.getName(), student.getAge(), student.getCreateTime());
     }
+
+    @Override
+    public void update(Student student) {
+        String sql = "update bu_student set name=?,age=? where id=?";
+        jdbcTemplate.update(sql, student.getName(), student.getAge(), student.getId());
+    }
 }

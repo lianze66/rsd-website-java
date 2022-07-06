@@ -11,12 +11,26 @@
 
     <script type="text/javascript">
         $(function() {
+            var param = window.location.search;
+            if (param != "") {
+                var id = param.substring(param.indexOf("=") + 1);
+                $.get("${pageContext.request.contextPath}/student/detail/"+id, function (data, status) {
+                    $("[name='id']").val(data.id);
+                    $("[name='name']").val(data.name);
+                    $("[name='age']").val(data.age);
+                });
+            }
+
             $(".btn").click(function() {
                 var formData = {
+                    id:$("[name='id']").val(),
                     name:$("[name='name']").val(),
                     age:$("[name='age']").val()
                 };
-                $.post("${pageContext.request.contextPath}/student/insert", formData, function (data, status, a) {
+
+                var method = formData.id==""?"insert":"update";
+
+                $.post("${pageContext.request.contextPath}/student/"+method, formData, function (data, status) {
                     if (status == "success") {
                         alert("保存成功！");
                         window.location.href = "${pageContext.request.contextPath}/admin/jsp/student/list.jsp";
@@ -44,6 +58,7 @@
     <div class="formtitle"><span>基本信息</span></div>
 
     <form id="myForm">
+        <input type="hidden" name="id" />
         <ul class="forminfo">
             <li><label>名称</label><input name="name" type="text" class="dfinput" /><i>名称不可以为空！</i></li>
             <li><label>年龄</label><input name="age" type="text" class="dfinput" /><i>年龄不可以为空！</i></li>

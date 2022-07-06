@@ -21,8 +21,18 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     @Override
+    public Student getById(Integer id) {
+        return studentDAO.getById(id);
+    }
+
+    @Override
     public void insert(Student student) {
         student.setCreateTime(new Date());
         studentDAO.insert(student);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentDAO.update(student);
     }
 }
