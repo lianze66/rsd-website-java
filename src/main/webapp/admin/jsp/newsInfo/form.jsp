@@ -108,6 +108,10 @@
 
         <script type="text/javascript">
             UE.getEditor('content', {
+                toolbars:[
+                    ['source','anchor','undo','redo','bold','indent','snapscreen','forecolor','map','date'],
+                    ['touppercase','tolowercase','paragraph']
+                ],
                 wordCount:false,
                 autoClearinitialContent:true,
                 elementPathEnabled:false,
