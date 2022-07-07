@@ -1,5 +1,6 @@
 package org.rsd.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.rsd.bean.SysFunction;
 
