@@ -94,9 +94,8 @@
                     </li>
 
                     <li>
-                        <label>新闻内容</label>
-                        <script id="content" type="text/plain" style="width:800px;height:60px;"></script>
-                        <i>新闻内容不可以为空！</i>
+                        <label style="position: absolute; z-index: 99999">新闻内容</label>
+                        <script id="content" type="text/plain" style="margin-left: 86px"></script>
                     </li>
 
                     <li>
@@ -108,7 +107,13 @@
         </div>
 
         <script type="text/javascript">
-            UE.getEditor('content');
+            UE.getEditor('content', {
+                wordCount:false,
+                autoClearinitialContent:true,
+                elementPathEnabled:false,
+                initialFrameHeight:100,
+                initialFrameWidth:600
+            });
         </script>
     </body>
 </html>

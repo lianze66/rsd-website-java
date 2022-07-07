@@ -190,7 +190,6 @@ h2{font-weight:normal;}
 .textinput{border-top:solid 1px #a7b5bc; border-left:solid 1px #a7b5bc; border-right:solid 1px #ced9df; border-bottom:solid 1px #ced9df; background:url(../images/inputbg.gif) repeat-x; padding:10px; width:504px; height:135px; line-height:20px; overflow:hidden;}
 .btn{width:137px;height:35px; background:url(../images/btnbg.png) no-repeat; font-size:14px;font-weight:bold;color:#fff; cursor:pointer;}
 
-
 /*tip*/
 .tip{width:485px; height:260px; position:absolute;top:10%; left:30%;background:#fcfdfd;box-shadow:1px 8px 10px 1px #9b9b9b;border-radius:1px;behavior:url(js/pie.htc); display:none; z-index:111111;}
 .tiptop{height:40px; line-height:40px; background:url(../images/tcbg.gif)  repeat-x; cursor:pointer;}
