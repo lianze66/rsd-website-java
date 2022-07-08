@@ -35,6 +35,11 @@ public class SysFunctionServiceImpl implements ISysFunctionService {
         return rootList;
     }
 
+    @Override
+    public List<SysFunction> queryList() {
+        return sysFunctionMapper.list();
+    }
+
     private void buildTree(List<SysFunction> list) {
         if (list != null && !list.isEmpty()) {
             for (SysFunction sysFunction : list) {
