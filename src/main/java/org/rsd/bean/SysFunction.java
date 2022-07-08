@@ -13,6 +13,10 @@ public class SysFunction {
 
     private Integer parentId;
 
+    private String url;
+
+    private String isUsed;
+
     private List<SysFunction> childList;
 
 }
