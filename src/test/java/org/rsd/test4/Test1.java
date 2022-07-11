@@ -1,5 +1,6 @@
 package org.rsd.test4;
 
+import lombok.SneakyThrows;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import org.junit.jupiter.api.Test;
 
@@ -17,8 +18,7 @@ public class Test1 {
 
         Queue queue = session.createQueue("lianze");
         MessageProducer producer = session.createProducer(queue);
-        TextMessage textMessage = session.createTextMessage();
-        textMessage.setText("我爱北京天安门。");
+        TextMessage textMessage = session.createTextMessage("我爱北京天安门。");
         producer.send(textMessage);
 
         producer.close();
@@ -38,10 +38,11 @@ public class Test1 {
 //        Message message = consumer.receive();
 //        System.out.println(message);
         consumer.setMessageListener(new MessageListener() {
-
+            @SneakyThrows
             @Override
             public void onMessage(Message message) {
-                System.out.println(message);
+                TextMessage textMessage = (TextMessage) message;
+                System.out.println(textMessage.getText());
             }
         });
 
