@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="factory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="tcp://121.36.94.172:61616" />
+        <property name="userName" value="admin" />
+        <property name="password" value="admin" />
+    </bean>
+
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">
+        <property name="targetConnectionFactory" ref="factory" />
+    </bean>
+
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+    </bean>
+
+    <bean id="queue1JmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="defaultDestination" ref="queue1" />
+    </bean>
+
+    <bean id="queue1" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="exam.queue" />
+    </bean>
+    <bean id="queue2" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg value="kaoshi.queue" />
+    </bean>
+
+    <bean id="topic1" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="exam.topic" />
+    </bean>
+    <bean id="topic2" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="kaoshi.topic" />
+    </bean>
+</beans>
